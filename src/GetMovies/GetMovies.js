@@ -1,5 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-query'
+import Homepage from '../Homepage/Homepage'
+
 
 const GetMovies = () => {
 
@@ -17,10 +19,11 @@ const GetMovies = () => {
    if (isLoading) return 'Loading...'
  
    if (error) return 'An error has occurred: ' + error.message
-   console.log(data)
 
   return (
-    <div>All Movies</div>
+    <>
+        <Homepage data={data} />    
+    </>
   )
 }
 
