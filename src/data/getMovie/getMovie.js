@@ -1,9 +1,9 @@
 import { useQuery } from "react-query"
 
 const GetMovie = (query) => {
-    
+    console.log("in GetMovie")
     const { isLoading, error, data } = useQuery(query, () =>
-     fetch(`https://wookie.codesubmit.io/movies`, {
+     fetch(`https://wookie.codesubmit.io/movies?q=${query}`, {
         headers: new Headers ({
             "Authorization": "Bearer Wookie2021"
         })
@@ -12,11 +12,12 @@ const GetMovie = (query) => {
        res.json()
      )
    )
+   
  
    if (isLoading) return 'Loading...'
  
    if (error) return 'An error has occurred: ' + error.message
-       
+  
   return data
 }
 

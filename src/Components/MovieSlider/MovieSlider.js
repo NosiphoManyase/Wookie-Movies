@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import "@splidejs/react-splide/css";
 
 const MovieSlider = (moviesInGenre) => {
-    // console.log(moviesInGenre)
 
     const splideOptions = {
         perPage: 5,
@@ -25,7 +24,7 @@ const MovieSlider = (moviesInGenre) => {
 
     const displayCards = () => {
         const cards = moviesInGenre.map(movie => (
-            <SplideSlide >
+            <SplideSlide>
                 <Link to={`/${movie.slug}`} state={movie}>
                   <img src={movie.poster} alt={`${movie.title} card`} style={{width:'200px', }} />
                 </Link>   
@@ -36,9 +35,11 @@ const MovieSlider = (moviesInGenre) => {
     }
 
   return (
-    <Splide options={splideOptions} style={{display:'flex', }}>
+    <>
+      <Splide options={splideOptions} style={{display:'flex', }}>
         {displayCards()}
-    </Splide>
+      </Splide>
+    </>
   )
 }
 
