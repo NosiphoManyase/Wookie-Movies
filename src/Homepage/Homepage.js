@@ -1,5 +1,5 @@
 import React from 'react'
-import AllMovies from '../Components/AllMovies/AllMovies'
+import AllMovies from '../Components/Movies/DisplayMovies'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from '../Components/Header/Header'
 import Movie from '../Components/Movie/Movie'
