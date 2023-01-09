@@ -1,6 +1,6 @@
 import './App.css';
 import { QueryClientProvider, QueryClient } from 'react-query';
-import GetMovies from './GetMovies/GetMovies';
+import GetMovies from './data/getMovies/GetMovies';
 
 function App() {
 

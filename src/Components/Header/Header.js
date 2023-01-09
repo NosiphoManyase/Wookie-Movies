@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import SearchResults from '../SearchResults/SearchResults'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
 
@@ -8,13 +7,14 @@ const Header = () => {
     const [input, setInput] = useState('')
 
     const searchMovie = (event) => {
+
         if(event.key === "Enter"){
-            navigate(`/search/${event.target.value}`)
+            navigate(`/search/${input}`, {state: input})
         }
     }
   return (
     <div className='header'>
-        <h1>Wookie Movies</h1>
+        <h1><Link to='/'>Wookie Movies</Link></h1>
         <input type="text" 
             onChange={event => setInput(event.target.value)}
             onKeyDown={searchMovie}

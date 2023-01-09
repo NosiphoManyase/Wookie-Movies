@@ -1,6 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-query'
-import Homepage from '../Homepage/Homepage'
+import Homepage from '../../Homepage/Homepage'
 
 
 const GetMovies = () => {
