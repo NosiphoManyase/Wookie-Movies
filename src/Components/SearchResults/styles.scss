@@ -1,0 +1,25 @@
+@use '../../scss/main.scss' as *;
+
+.search{
+
+    &-body{
+
+        @include body-settings;
+        height: 100vh;
+    }
+
+    &-response{
+        @include body-content;
+        display: flex;
+
+        .movie-title{
+            padding: 0 1rem;
+
+            img{
+                width: 200px;
+            }
+        }
+    }
+
+}
+

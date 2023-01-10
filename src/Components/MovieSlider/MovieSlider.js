@@ -2,6 +2,7 @@ import React from 'react'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { Link } from 'react-router-dom';
 import "@splidejs/react-splide/css";
+import './styles.scss'
 
 const MovieSlider = (moviesInGenre) => {
 
@@ -14,6 +15,7 @@ const MovieSlider = (moviesInGenre) => {
         pagination: false,
         padding: '2rem',
         breakpoints: {
+          1400: { perPage: 4},
           1200: { perPage: 3},
           991: { perPage: 2.3},
           768: { perPage: 2},
@@ -25,8 +27,8 @@ const MovieSlider = (moviesInGenre) => {
     const displayCards = () => {
         const cards = moviesInGenre.map(movie => (
             <SplideSlide>
-                <Link to={`/${movie.slug}`} state={movie}>
-                  <img src={movie.poster} alt={`${movie.title} card`} style={{width:'200px', }} />
+                <Link to={`/${movie.slug}`} state={movie} style={{ margin:'0 auto' }}>
+                  <img src={movie.poster} alt={`${movie.title} card`} />
                 </Link>   
             </SplideSlide>
         ))
@@ -36,7 +38,7 @@ const MovieSlider = (moviesInGenre) => {
 
   return (
     <>
-      <Splide options={splideOptions} style={{display:'flex', }}>
+      <Splide options={splideOptions}>
         {displayCards()}
       </Splide>
     </>

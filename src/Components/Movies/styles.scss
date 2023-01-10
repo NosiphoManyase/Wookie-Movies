@@ -1,0 +1,20 @@
+@use '../../scss/main.scss' as *;
+
+.body-container{
+    @include body-settings;
+
+    .genre{
+        @include body-content;
+
+        &--title{
+            font-size: 20px;
+            color: $off-white-dark;
+        }
+
+        .movie-slider{
+            padding: 1rem 2rem;
+            height: 100%;
+            
+        }
+    }
+}

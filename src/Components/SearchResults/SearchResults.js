@@ -1,6 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import {GetMovie} from '../../data/getMovie/getMovie.js'
+import { Link } from 'react-router-dom'
+import './styles.scss'
 
 const SearchResults = () => {
   
@@ -13,25 +15,31 @@ const SearchResults = () => {
   const displayResults = () => {
     
     let movies = []
-          if(result.length>1){
+        if(result.length>1){
         
         movies = result.map(movie => {
-          return <div><img src={movie.poster} style={{width:'200px', }} /></div>
+          return <div className='movie-title'>
+            <Link to={`/${movie.slug}`} state={movie}><img src={movie.poster} /></Link>
+          </div>
         })
         return movies
       }else if(result.length === 1){
        
-        movies = <div><img src={result[0].poster} style={{width:'200px', }} /></div>
+        movies = <div className='movie-title'>
+          <Link to={`/${result[0].slug}`} state={result[0]}><img src={result[0].poster} /></Link>
+        </div>
       }else {
-                movies = <p>no movies by that title found</p>
+                movies = <div><p>no movies by that title found</p></div>
       }
 
     return movies
   }
 
   return (
-    <div>
-      {result && displayResults()}
+    <div className='search-body'>
+      <div className='search-response'>
+        {result && displayResults()}
+      </div>
     </div>
   )
 }

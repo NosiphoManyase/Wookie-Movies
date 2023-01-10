@@ -1,0 +1,23 @@
+
+$dark-grey: #36454F;
+$light-grey: #A9A9A9;
+$off-white-light: rgb(250, 249, 246, .7);
+$off-white-dark: rgb(250, 249, 246, .9);
+
+
+@mixin movie-poster{
+    max-width: 150px;
+    max-height: 100%;
+}
+
+@mixin body-settings{
+    padding: 5rem .75rem;
+    background-color: $light-grey;
+}
+
+@mixin body-content{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+}

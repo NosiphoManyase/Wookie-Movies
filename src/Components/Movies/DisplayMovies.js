@@ -1,6 +1,7 @@
 import React from 'react'
-import Movies from './SortMovies'
+import Movies from '../SortMovies/SortMovies'
 import MovieSlider from '../MovieSlider/MovieSlider'
+import './styles.scss'
 
 const DisplayMovies = (props) => {
     
@@ -13,14 +14,17 @@ const DisplayMovies = (props) => {
         for (const [key, value] of Object.entries(sortedMovies)) {
             
             const movies = MovieSlider(value)
-            const genre = <div>{key}<div>{movies}</div></div>
+            const genre = <div className='genre'>
+              <span className='genre--title'>{key.toLocaleUpperCase()}</span>
+              <div className='movie-slider'>{movies}</div>
+            </div>
             toDisplay.push(genre)
           }
 
         return toDisplay
     }
   return (
-    <div>
+    <div className='body-container'>
         {displayMovies()}
     </div>
   )

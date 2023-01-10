@@ -1,0 +1,30 @@
+@use '../../scss/main.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: $dark-grey;
+    
+
+    &--container{
+        padding: 1rem 5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--name{
+        text-decoration: none;
+        color: $off-white-dark;
+        font-size: 40px;
+        font-family: 'Bebas Neue', sans-serif;
+    }
+
+    &--search-bar{
+        height: 20px;
+        align-self: center;
+        background-color: $off-white-dark;
+    }
+}

@@ -1,0 +1,15 @@
+@use 'src/scss/main.scss' as *;
+
+.splide{
+
+    &__track{
+        padding: 0 1rem;
+    }
+    &__slide {
+
+        & img {
+        @include movie-poster;
+        }
+    }
+    
+}

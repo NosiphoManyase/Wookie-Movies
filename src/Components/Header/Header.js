@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import './styles.scss'
 
 const Header = () => {
 
@@ -14,11 +15,14 @@ const Header = () => {
     }
   return (
     <div className='header'>
-        <h1><Link to='/'>Wookie Movies</Link></h1>
-        <input type="text" 
-            onChange={event => setInput(event.target.value)}
-            onKeyDown={searchMovie}
-        />
+        <div className='header--container'>
+            <h1><Link to='/' className='header--name'>Wookie Movies</Link></h1>
+            <input type="text" 
+                onChange={event => setInput(event.target.value)}
+                onKeyDown={searchMovie}
+                className='header--search-bar'
+            />
+        </div>
     </div>
   )
 }

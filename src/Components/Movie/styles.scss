@@ -1,0 +1,55 @@
+@use '../../scss/main.scss' as *;
+
+.movie{
+    display: flex;
+    height: 100vh;
+    background-color: $light-grey;
+    
+    &__card{
+        display: flex;
+        width: 65%;
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    &__poster img{
+        width: 200px; 
+    }
+
+    &__details{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 1rem;
+
+        & div{
+            margin-bottom: auto;
+        }
+
+        &_header{
+
+            &_p1{
+                display: flex;
+
+                & .rating{
+                    margin-left: 10px;
+                }
+
+                & .stars{
+                    margin-left: 15px;
+                }
+            }
+            
+            &_p2{
+                margin-top: 1rem;
+
+                &.cast{
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+
+
+    }
+}
