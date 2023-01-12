@@ -8,6 +8,7 @@ $off-white-dark: rgb(250, 249, 246, .9);
 @mixin movie-poster{
     max-width: 150px;
     max-height: 100%;
+    border-radius: 2px;
 }
 
 @mixin body-settings{

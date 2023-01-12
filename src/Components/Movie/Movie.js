@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import Rating from '@mui/material/Rating';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
-import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
-import Bookmark from '../BookmarkMovies/Bookmark'
-import './styles.scss'
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Rating from "@mui/material/Rating";
+import Bookmark from "../BookmarkMovies/Bookmark";
+import "./styles.scss";
 
 const Movie = () => {
+  const location = useLocation();
+  const movie = location.state;
 
-  const location = useLocation()
-  const movie  = location.state
-
-  const rating = (movie.imdb_rating/10)* 5
-  const year = movie.released_on.split('-')[0]
-  const director = Array.isArray(movie.director)?movie.director.join(', '):movie.director
-  const cast = movie.cast.join(', ')
+  const rating = (movie.imdb_rating / 10) * 5;
+  const year = movie.released_on.split("-")[0];
+  const director = Array.isArray(movie.director)
+    ? movie.director.join(", ")
+    : movie.director;
+  const cast = movie.cast.join(", ");
 
   return (
-    <div className='movie'>
-      <div className='movie__card'>
-        <div className='movie__poster'>
-          <img  src={movie.poster}/>
+    <div className="movie">
+      <div className="movie__card">
+        <div className="movie__poster">
+          <img src={movie.poster} />
         </div>
-        <div className='movie__details' >
-          <div className='movie__details_header'>
-            <div className='movie__details_header_p1'>
+        <div className="movie__details">
+          <div className="movie__details_header">
+            <div className="movie__details_header_p1">
               <p>{movie.title}</p>
-              <p className='stars'>
-                <span className='rating'>({movie.imdb_rating})</span>
-                <Rating name='half-rating-read' 
+              <p className="stars">
+                <span className="rating">({movie.imdb_rating})</span>
+                <Rating
+                  name="half-rating-read"
                   defaultValue={rating}
-                  precision={0.5} 
+                  precision={0.5}
                   readOnly
                 />
               </p>
-              <Bookmark movie={movie}/>
+              <Bookmark movie={movie} />
             </div>
-            <div className='movie__details_header_p2'>
+            <div className="movie__details_header_p2">
               {year} | {movie.length} | {director}
-              <p className='cast'>cast: {cast}</p>
+              <p className="cast">cast: {cast}</p>
             </div>
           </div>
           <div>
@@ -47,7 +47,7 @@ const Movie = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Movie
+export default Movie;
