@@ -4,28 +4,22 @@ import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
 
 
 const Bookmark = (movie) => {
-
-    console.log(movie)
-    console.log('rerender')
+    
     const [isBookmarked, setIsBookmarked] = useState(false)
-    // const movie = movieObj.movie
 
     const getBookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies'))
     // check in existing bookmarks if currentmovie already bookmerked
 
     useEffect( () => {
+       
             if(getBookmarks){
-                console.log('bookmarks exist')
-                console.log(getBookmarks)
+
                 const isAlreadyBookmarked = getBookmarks.some(bookmarkMovie => bookmarkMovie.id === movie.movie.id)
                 
                 if(isAlreadyBookmarked){
-                    console.log('bookmarked')
-                    console.log(!isBookmarked)
                     setIsBookmarked(true)
                 }
                 
-            //add first bookmarl to local storage
             }
         }
         ,[isBookmarked]
@@ -35,22 +29,21 @@ const Bookmark = (movie) => {
     
     const bookmarkIcon = () => {
 
-        console.log('in func')
-        console.log("is it bookmarked?"+isBookmarked)
         const existingBookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies'))
-
+        
         if(existingBookmarks){
             if(!isBookmarked){
-                console.log('not bookmarked')
+                
                 existingBookmarks.push(movie.movie)
                 localStorage.setItem('bookmarkedMovies', JSON.stringify(existingBookmarks))
                 setIsBookmarked(true)
                 
             }else{
-                console.log('is bookmarked')
+                
                 const removeBookmark = existingBookmarks.filter(bookmarkMovie => (
-                bookmarkMovie.id !== movie.id
+                    bookmarkMovie.id != movie.movie.id
                 ))
+    
                 localStorage.setItem('bookmarkedMovies', JSON.stringify(removeBookmark))
                 setIsBookmarked(false)
             }
