@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from '../Components/Header/Header'
 import Movie from '../Components/Movie/Movie'
 import SearchResults from '../Components/SearchResults/SearchResults'
+import BookmarkedMovies from '../Components/BookmarksPage/DisplayBookMarks'
 
 const Homepage = (props) => {
 
@@ -21,6 +22,9 @@ const Homepage = (props) => {
           />
           <Route path='/search/:slug'
             element={<SearchResults/>}
+          />
+          <Route path='/bookmarks'
+            element={<BookmarkedMovies/>}
           />
         </Routes>
       </Router>

@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Rating from '@mui/material/Rating';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkOutlinedIcon from '@mui/icons-material/BookmarkOutlined';
+import Bookmark from '../BookmarkMovies/Bookmark'
 import './styles.scss'
 
 const Movie = () => {
@@ -22,14 +25,16 @@ const Movie = () => {
         <div className='movie__details' >
           <div className='movie__details_header'>
             <div className='movie__details_header_p1'>
-              <p>{movie.title}<span className='rating'>({movie.imdb_rating})</span></p>
+              <p>{movie.title}</p>
               <p className='stars'>
+                <span className='rating'>({movie.imdb_rating})</span>
                 <Rating name='half-rating-read' 
                   defaultValue={rating}
                   precision={0.5} 
                   readOnly
                 />
               </p>
+              <Bookmark movie={movie}/>
             </div>
             <div className='movie__details_header_p2'>
               {year} | {movie.length} | {director}

@@ -16,7 +16,7 @@
             padding: 0 1rem;
 
             img{
-                width: 200px;
+                @include movie-poster
             }
         }
     }

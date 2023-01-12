@@ -32,11 +32,17 @@
                 display: flex;
 
                 & .rating{
-                    margin-left: 10px;
+                    align-self: start;
                 }
 
                 & .stars{
-                    margin-left: 15px;
+                    display: flex;
+                    margin-left: auto;
+                }
+
+                & .bookmark{
+                    margin-left: auto;
+                    font-size: 30px;
                 }
             }
             

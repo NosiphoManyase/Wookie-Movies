@@ -29,7 +29,7 @@ const SearchResults = () => {
           <Link to={`/${result[0].slug}`} state={result[0]}><img src={result[0].poster} /></Link>
         </div>
       }else {
-                movies = <div><p>no movies by that title found</p></div>
+                movies = <div> <h1>No matching movie titles found...</h1></div>
       }
 
     return movies

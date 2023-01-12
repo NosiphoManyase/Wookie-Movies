@@ -1,7 +1,6 @@
 import { useQuery } from "react-query"
 
 const GetMovie = (query) => {
-    console.log("in GetMovie")
     const { isLoading, error, data } = useQuery(query, () =>
      fetch(`https://wookie.codesubmit.io/movies?q=${query}`, {
         headers: new Headers ({
